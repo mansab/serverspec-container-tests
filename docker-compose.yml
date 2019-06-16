@@ -1,0 +1,8 @@
+version: '3'
+services:
+  sample-service:
+    build: .
+    image: "sample-service:latest"
+    container_name: "sample-service"
+    ports:
+      - "5000:5000"
