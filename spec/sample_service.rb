@@ -26,8 +26,15 @@ describe "Dockerfile" do
     command("python --version").stdout
   end
 
+  describe user('app-user') do
+    it { should exist }
+    it { should have_login_shell '/bin/sh' }
+    it { should have_home_directory '/app' }
+  end
+
   describe file('/app/index.py') do
     it { should be_mode 644 }
+    it { should be_owned_by 'app-user' }
   end
 
 end
