@@ -1,1 +1,1 @@
-FROM alpine:3.9.4
+FROM python:3.7-alpine3.9
