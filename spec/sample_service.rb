@@ -44,10 +44,7 @@ describe "Dockerfile" do
     its(:args) { should match(/\.\/index.py/) }
   end
 
-  describe 'port 5000' do
-    it 'should be open' do
-      wait_for(port(5000)).to be_listening.with('tcp')
-    end
+  describe port(5000) do
+    it { should be_listening }
   end
-
 end
