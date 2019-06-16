@@ -38,4 +38,16 @@ describe "Dockerfile" do
     it { should be_owned_by 'app-user' }
   end
 
+  describe process('python') do
+    it { should be_running }
+    its(:user) { should match(/app-user/) }
+    its(:args) { should match(/\.\/index.py/) }
+  end
+
+  describe 'port 5000' do
+    it 'should be open' do
+      wait_for(port(5000)).to be_listening.with('tcp')
+    end
+  end
+
 end
