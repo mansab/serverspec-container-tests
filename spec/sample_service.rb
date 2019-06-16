@@ -26,4 +26,8 @@ describe "Dockerfile" do
     command("python --version").stdout
   end
 
+  describe file('/app/index.py') do
+    it { should be_mode 644 }
+  end
+
 end
