@@ -30,6 +30,7 @@ describe "Dockerfile" do
     it { should exist }
     it { should have_login_shell '/bin/sh' }
     it { should have_home_directory '/app' }
+    it { should belong_to_group 'root' }
   end
 
   describe file('/app/index.py') do
