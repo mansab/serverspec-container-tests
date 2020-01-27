@@ -18,8 +18,8 @@ describe "Dockerfile" do
     command("cat /etc/alpine-release").stdout
   end
 
-  it "should have python 3.7.3" do
-    expect(python_version).to include("Python 3.7.3")
+  it "should have python 3.7.6" do
+    expect(python_version).to include("Python 3.7.6")
   end
 
   def python_version
